@@ -49,6 +49,18 @@
                         <td>{{ $feedback->token }}</td>
                     </tr>
                     <tr>
+                        <th>Rating</th>
+                        <td>
+                            @for ($j = 1; $j <= 5; $j++)
+                                @if ($j <= $feedback->rating)
+                                    <span style="color: #facc15; font-size: 1.2rem;">&#9733;</span>
+                                @else
+                                    <span style="color: rgba(255,255,255,0.2); font-size: 1.2rem;">&#9733;</span>
+                                @endif
+                            @endfor
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Feedback</th>
                         <td>{{ $feedback->feedback }}</td>
                     </tr>

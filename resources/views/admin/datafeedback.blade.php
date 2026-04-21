@@ -66,6 +66,7 @@
                         <tr>
                             <th>No</th>
                             <th>Token</th>
+                            <th>Rating</th>
                             <th>Feedback</th>
                             <th>Tanggal</th>
                             <th>Aksi</th>
@@ -76,6 +77,15 @@
                             <tr>
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ $feedback->token }}</td>
+                                <td>
+                                    @for ($j = 1; $j <= 5; $j++)
+                                        @if ($j <= $feedback->rating)
+                                            <span style="color: #facc15;">&#9733;</span>
+                                        @else
+                                            <span style="color: rgba(255,255,255,0.2);">&#9733;</span>
+                                        @endif
+                                    @endfor
+                                </td>
                                 <td>{{ $feedback->feedback }}</td>
                                 <td>{{ $feedback->created_at->format('d-m-Y') }}</td>
                                 <td class="actions">

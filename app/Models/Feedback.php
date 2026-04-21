@@ -13,6 +13,7 @@ class Feedback extends Model
 
     protected $fillable = [
         'token',
+        'rating',
         'feedback',
     ];
 }
